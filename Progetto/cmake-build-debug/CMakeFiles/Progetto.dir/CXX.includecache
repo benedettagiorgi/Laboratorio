@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/admin/CLionProjects/Progetto/Matrice.h
+vector
+-
+iostream
+-
+eccezioneIndice.h
+/Users/admin/CLionProjects/Progetto/eccezioneIndice.h
+eccezioneMat.h
+/Users/admin/CLionProjects/Progetto/eccezioneMat.h
+
+/Users/admin/CLionProjects/Progetto/eccezioneIndice.h
+stdexcept
+-
+string
+-
+
+/Users/admin/CLionProjects/Progetto/eccezioneMat.h
+stdexcept
+-
+string
+-
+
+/Users/admin/CLionProjects/Progetto/main.cpp
+Matrice.h
+/Users/admin/CLionProjects/Progetto/Matrice.h
+iostream
+-
+

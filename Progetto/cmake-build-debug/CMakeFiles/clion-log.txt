@@ -1,0 +1,10 @@
+/Users/admin/Desktop/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/admin/CLionProjects/Progetto
+-- Found PythonInterp: /anaconda3/bin/python (found version "3.6.5") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - found
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/admin/CLionProjects/Progetto/cmake-build-debug
