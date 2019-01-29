@@ -25,18 +25,19 @@ public:
     void setValore(T& v, int r, int c);
     int numRighe();
     int numColonne();
-    virtual ~Matrice();
+    ~Matrice();
     Matrice <T> selezionaRiga( int r)throw(eccezioneIndice);
     Matrice <T> selezionaColonna( int c)throw(eccezioneIndice);
     Matrice<T> operator+(const  Matrice<T>& m) const throw(eccezioneMat);
     Matrice<T> operator- (const Matrice<T>& m) const throw(eccezioneMat);
     Matrice<T> operator* (const Matrice<T>& m) const throw(eccezioneMat);
+    Matrice<T> operator* ( const T& m) const;
     Matrice<T> operator/ ( const T& m) const;
     Matrice<T> trasposizione();
     bool operator==( const Matrice<T>& m) const;
     bool operator!=(const Matrice<T>& m) const;
 
-    void stampa();
+    std::string toString();
 
 
 
@@ -82,7 +83,7 @@ T &Matrice<T>::getValore(int r, int c) throw (eccezioneIndice) {
 }
 
 template <typename T>
-void Matrice<T>::setValore( T& v, int r, int c) {
+void Matrice<T>::setValore( T& v, int r, int c)  {
     ptr[r*colonne + c] = v;
 
 
@@ -169,6 +170,18 @@ Matrice<T> Matrice<T>::operator*(const Matrice<T> &m) const throw (eccezioneMat)
 }
 
 
+template<typename T>
+Matrice<T> Matrice<T>::operator*(const T&m) const {
+    Matrice<T> matriceMoltiplicazione(righe,colonne);
+    for(int i=0; i< righe*colonne; i++)
+        matriceMoltiplicazione.ptr[i]= ptr[i]*m;
+    return matriceMoltiplicazione;
+
+}
+
+
+
+
 template <typename T>
 Matrice<T> Matrice<T>::operator/(const T &m) const {
     Matrice<T> matriceDivisione(righe, colonne);
@@ -211,14 +224,18 @@ bool Matrice<T>::operator!=(const Matrice<T> &m) const{
 }
 
 template <typename T>
-void Matrice<T>::stampa() {
+std::string Matrice<T>::toString() {
+    std::string res = std::string( "" );
     for (int i=0; i< numRighe(); i++) {
-        std::cout << "  ";
         for (int j=0; j<numColonne(); j++){
-            std::cout << getValore(i,j) << " ";
+             res+=std::to_string(getValore(i,j)) + std::string( " " );
+
+
         }
-        std::cout << std::endl;
+        res= res+std::string("\n");
+
     }
+    return res;
 }
 
 
