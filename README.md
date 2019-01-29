@@ -1,2 +1,2 @@
 # Laboratorio
-La cartella di googletest è da decomprimere
+La cartella di googletest è da decomprimere.
