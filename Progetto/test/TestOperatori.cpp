@@ -29,6 +29,17 @@ TEST(Operatori, Sottrazione) {
     ASSERT_EQ(A-B, SUB);
 }
 
+TEST(Operatori, SottrazioneErrata){
+    Matrice<int>A( 2,3, {2, 2, 4, 4, 1, 4});
+    Matrice<int>B(2, 2,  {1, 2, 3, 3});
+
+
+    ASSERT_THROW(A-B, eccezioneMat);
+
+}
+
+
+
 
 TEST(Operatori, Moltiplicazione){
     Matrice<int>A( 2,3, {2, 2, 4, 4, 1, 4});
@@ -36,6 +47,22 @@ TEST(Operatori, Moltiplicazione){
     Matrice<int> MUL(2,2, {12, 18, 11, 19});
 
     ASSERT_EQ( A*B, MUL);
+}
+
+
+TEST(Operatori, MoltiplicazioneErrata) {
+    Matrice<int>A( 2,3, {2, 2, 4, 4, 1, 4});
+    Matrice<int>B(1, 5,  {1, 2, 3, 3, 1});
+
+    ASSERT_THROW(A*B, eccezioneMat);
+
+}
+
+TEST(Operatori, MoltiplicazioneScalare) {
+    Matrice<int>A(2,3, {2,3,4,1,2,7});
+    Matrice<int>MUL(2,3, {6,9,12,3,6,21});
+
+    ASSERT_EQ(A*3, MUL);
 }
 
 
