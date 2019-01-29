@@ -14,22 +14,20 @@ int main() {
 
 
     cout << " matrice A= " << endl;
-    A.stampa();
-    cout << endl;
+    cout << A.toString() << endl;
+
 
 
 
 
     cout << " matrice B= " << endl;
-    B.stampa();
-    cout << endl;
+    cout << B.toString() << endl;
 
 
 
 
     cout << " matrice C= " << endl;
-    C.stampa();
-    cout << endl;
+    cout << C.toString() << endl;
 
 
 
@@ -37,8 +35,7 @@ int main() {
 
 
     cout << " matrice D= " << endl;
-    D.stampa();
-    cout << endl;
+    cout << D.toString() << endl;
 
 
 
@@ -47,19 +44,23 @@ int main() {
 
     cout<< "A + B = " << endl;
     Matrice<int> matriceSomma = A+B;
-    matriceSomma.stampa();
-    cout << endl;
+    cout << matriceSomma.toString() << endl;
 
 
     cout<< " C * D = " << endl;
     Matrice<float> matriceProdotto = C*D;
-    matriceProdotto.stampa();
-    cout << endl;
+    cout << matriceProdotto.toString() << endl;
 
     cout<< " A trasposta : " << endl;
     Matrice<int> trasposta = A.trasposizione();
-    trasposta.stampa();
-    cout <<endl;
+    cout << trasposta.toString() << endl;
+
+
+
+    cout<< " A * 3 =" <<endl;
+    Matrice<int> matriceProdotto2= A*3;
+    cout << matriceProdotto2.toString() << endl;
+
 
 
     return 0;
